@@ -1,31 +1,31 @@
 # videokit-vfx-packages
 
-VideoKit 共享 VFX 包仓库。收录 shader 滤镜、转场、文字动画、AI 推理效果、LUT、音效素材等。
+A community-shared VFX package registry for VideoKit. Includes shader filters, transitions, text animations, AI inference effects, LUTs, audio assets, and more.
 
-## 目录结构
+## Repository Structure
 
 ```
 packages/
   <package-name>/
     <version>/
-      manifest.json    ← 包声明文件（格式见下）
-      <资源文件…>      ← shader、模型、LUT、音频等
+      manifest.json    ← package declaration (see format below)
+      <assets...>      ← shaders, models, LUTs, audio, etc.
 ```
 
-## 如何使用
+## Usage
 
 ```bash
 git clone https://github.com/veogeek-no1/videokit-vfx-packages.git
 ```
 
-克隆后本地重建索引（工具待发布）。
+After cloning, rebuild the local index with the VideoKit tooling (coming soon).
 
-## 如何贡献
+## Contributing
 
-1. Fork 本仓库
-2. 在 `packages/<your-package-name>/<version>/` 下新增 `manifest.json` 及资源文件
-3. 提 PR，不会与他人产生冲突（每个包独立目录）
+1. Fork this repository
+2. Add your `manifest.json` and asset files under `packages/<your-package-name>/<version>/`
+3. Open a PR — no merge conflicts since every package lives in its own directory
 
-## Manifest 格式
+## Manifest Format
 
-参见 [VideoKit VFX Package 规范](https://github.com/veogeek-no1/video-kit/blob/main/docs/design/vfx-package.md)。
+See the [VideoKit VFX Package Spec](https://github.com/veogeek-no1/video-kit/blob/main/docs/design/vfx-package.md).

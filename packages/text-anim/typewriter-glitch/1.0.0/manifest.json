@@ -1,0 +1,83 @@
+{
+  "manifest_version": "1.0",
+  "id": "pkg:typewriter-glitch@1.0.0",
+  "name": "Typewriter Glitch",
+  "version": "1.0.0",
+  "author": {
+    "name": "VideoKit Team",
+    "url": "https://github.com/veogeek-no1"
+  },
+  "license": "MIT",
+  "description": "Characters appear one by one with a random jitter before snapping to their final position, simulating a real typewriter rhythm.",
+  "tags": ["text-animation", "typewriter", "glitch", "enter", "character"],
+  "category": "text_animation",
+  "preview": {
+    "video": "preview.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "kind": "text_animation",
+  "entry": "animation.json",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "speed": {
+        "type": "number",
+        "default": 1.0,
+        "minimum": 0.1,
+        "maximum": 5.0,
+        "description": "Typing speed multiplier. 1.0 = 0.08s per character; higher is faster."
+      },
+      "jitter": {
+        "type": "number",
+        "default": 0.3,
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Position jitter amount when each character appears. 0 = no jitter, 1 = maximum."
+      },
+      "char_delay_variance": {
+        "type": "number",
+        "default": 0.02,
+        "minimum": 0.0,
+        "maximum": 0.2,
+        "description": "Random variance in inter-character delay (seconds) to simulate natural typing rhythm."
+      }
+    },
+    "required": []
+  },
+  "resources": [
+    { "path": "animation.json", "role": "entry",     "description": "Keyframe animation definition" },
+    { "path": "preview.mp4",    "role": "preview" },
+    { "path": "thumbnail.png",  "role": "thumbnail" }
+  ],
+  "requirements": {
+    "runtime_version": ">=0.1.0",
+    "gpu": false,
+    "compute_shader": false,
+    "ai_runtime": null,
+    "platforms": ["macos", "windows", "linux", "web"]
+  },
+  "veml_hint": {
+    "applies_to": "text_clip.animation.enter",
+    "example": {
+      "animation": {
+        "enter": {
+          "pkg": "pkg:typewriter-glitch@1.0.0",
+          "kind": "text_animation",
+          "name": "Typewriter Glitch",
+          "description": "Characters appear one by one with jitter before snapping to final position",
+          "duration": 0.8,
+          "params": { "speed": 1.5, "jitter": 0.4 },
+          "params_schema": {
+            "speed":              { "type": "number", "range": [0.1, 5],   "default": 1.0,  "description": "Typing speed multiplier" },
+            "jitter":             { "type": "number", "range": [0, 1],     "default": 0.3,  "description": "Character jitter amount on appear" },
+            "char_delay_variance":{ "type": "number", "range": [0, 0.2],   "default": 0.02, "description": "Random delay variance between characters (seconds)" }
+          }
+        }
+      }
+    }
+  },
+  "registry": {
+    "published_at": "2026-06-03T00:00:00Z",
+    "verified": false
+  }
+}

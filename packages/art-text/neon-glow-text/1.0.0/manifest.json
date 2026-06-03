@@ -1,0 +1,86 @@
+{
+  "manifest_version": "1.0",
+  "id": "pkg:neon-glow-text@1.0.0",
+  "name": "Neon Glow Text",
+  "version": "1.0.0",
+  "author": {
+    "name": "VideoKit Team",
+    "url": "https://github.com/veogeek-no1"
+  },
+  "license": "MIT",
+  "description": "Vibrant neon sign effect with a sharp inner fill, bright outline, and soft outer bloom. Best on dark backgrounds. Ideal for gaming, nightlife, and cyberpunk aesthetics.",
+  "tags": ["art-text", "neon", "glow", "cyberpunk", "gaming", "nightlife", "style"],
+  "category": "text_style",
+  "preview": {
+    "video": "preview.mp4",
+    "thumbnail": "thumbnail.png"
+  },
+  "kind": "text_style",
+  "entry": "style.json",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "color": {
+        "type": "string",
+        "default": "#FF00FF",
+        "description": "Primary neon color (hex). Controls the fill and glow tint."
+      },
+      "glow_radius": {
+        "type": "number",
+        "default": 0.08,
+        "minimum": 0.0,
+        "maximum": 0.3,
+        "description": "Outer glow spread radius, normalized to font size."
+      },
+      "glow_intensity": {
+        "type": "number",
+        "default": 0.85,
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Glow brightness. Higher values produce a more saturated bloom."
+      },
+      "outline_width": {
+        "type": "number",
+        "default": 0.02,
+        "minimum": 0.0,
+        "maximum": 0.1,
+        "description": "Width of the bright inner outline, normalized to font size."
+      }
+    },
+    "required": []
+  },
+  "resources": [
+    { "path": "style.json",    "role": "entry",     "description": "Layer stack definition (fill + outline + glow)" },
+    { "path": "preview.mp4",   "role": "preview" },
+    { "path": "thumbnail.png", "role": "thumbnail" }
+  ],
+  "requirements": {
+    "runtime_version": ">=0.1.0",
+    "gpu": true,
+    "compute_shader": false,
+    "ai_runtime": null,
+    "platforms": ["macos", "windows", "linux", "web"]
+  },
+  "veml_hint": {
+    "applies_to": "text_clip.style",
+    "example": {
+      "style": {
+        "pkg": "pkg:neon-glow-text@1.0.0",
+        "kind": "text_style",
+        "name": "Neon Glow Text",
+        "description": "Vibrant neon sign with glowing halo, best on dark backgrounds",
+        "params": { "color": "#FF00FF", "glow_radius": 0.08, "glow_intensity": 0.85 },
+        "params_schema": {
+          "color":          { "type": "string", "default": "#FF00FF",              "description": "Primary neon color (hex)" },
+          "glow_radius":    { "type": "number", "range": [0, 0.3],   "default": 0.08,  "description": "Outer glow spread radius" },
+          "glow_intensity": { "type": "number", "range": [0, 1],     "default": 0.85,  "description": "Glow brightness" },
+          "outline_width":  { "type": "number", "range": [0, 0.1],   "default": 0.02,  "description": "Bright inner outline width" }
+        }
+      }
+    }
+  },
+  "registry": {
+    "published_at": "2026-06-03T00:00:00Z",
+    "verified": false
+  }
+}

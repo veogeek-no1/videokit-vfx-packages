@@ -6,11 +6,19 @@ A community-shared VFX package registry for VideoKit. Includes shader filters, t
 
 ```
 packages/
-  <package-name>/
-    <version>/
-      manifest.json    ← package declaration (see format below)
-      <assets...>      ← shaders, models, LUTs, audio, etc.
+  <category>/
+    <package-name>/
+      <version>/
+        manifest.json    ← package declaration (see format below)
+        <assets...>      ← shaders, models, LUTs, audio, etc.
 ```
+
+## Categories
+
+| Category | Description |
+|---|---|
+| `text-anim` | Text enter / exit / loop animations |
+| `art-text` | Decorative text styles (glow, outline, gradient, etc.) |
 
 ## Usage
 
@@ -23,8 +31,9 @@ After cloning, rebuild the local index with the VideoKit tooling (coming soon).
 ## Contributing
 
 1. Fork this repository
-2. Add your `manifest.json` and asset files under `packages/<your-package-name>/<version>/`
-3. Open a PR — no merge conflicts since every package lives in its own directory
+2. Add your `manifest.json` and asset files under `packages/<category>/<your-package-name>/<version>/`
+3. Set `"kind"` in your manifest to match the category folder name (e.g. `"text-anim"`, `"art-text"`)
+4. Open a PR — no merge conflicts since every package lives in its own directory
 
 ## Manifest Format
 

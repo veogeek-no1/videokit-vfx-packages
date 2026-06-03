@@ -10,12 +10,12 @@
   "license": "MIT",
   "description": "Characters appear one by one with a random jitter before snapping to their final position, simulating a real typewriter rhythm.",
   "tags": ["text-animation", "typewriter", "glitch", "enter", "character"],
-  "category": "text_animation",
+  "category": "text-anim",
   "preview": {
     "video": "preview.mp4",
     "thumbnail": "thumbnail.png"
   },
-  "kind": "text_animation",
+  "kind": "text-anim",
   "entry": "animation.json",
   "params_schema": {
     "type": "object",
@@ -62,7 +62,7 @@
       "animation": {
         "enter": {
           "pkg": "pkg:typewriter-glitch@1.0.0",
-          "kind": "text_animation",
+          "kind": "text-anim",
           "name": "Typewriter Glitch",
           "description": "Characters appear one by one with jitter before snapping to final position",
           "duration": 0.8,
